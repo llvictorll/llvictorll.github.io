@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Besnier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function togglePublications() {
+      const hiddenPubs = document.getElementById('more-publications');
+      const toggleBtn = document.getElementById('toggle-button');
+      hiddenPubs.classList.toggle('hidden');
+      toggleBtn.innerText = hiddenPubs.classList.contains('hidden') ? 'Show More' : 'Show Less';
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-inter">
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold">Victor Besnier</h1>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#publications" class="hover:text-blue-600">Publications</a>
+        <a href="#news" class="hover:text-blue-600">News</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <section id="about" class="mb-16">
+      <h2 class="text-xl font-semibold mb-4">About Me</h2>
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <img src="images/profile.jpg" alt="Victor Besnier" class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-md">
+        <p class="text-gray-700">Hey there! I'm Victor — a Research Scientist working in Computer Vision and Deep Learning. I’ve been passionate about image and video generation since 2018, when I first got hands-on with GANs during an internship. Since then, I’ve followed the exciting evolution of the field, diving into diffusion models, MaskGIT, and autoregressive techniques. My research has led to publications at top conferences like CVPR, ICCV, and ICLR, and I enjoy contributing to open-source projects. I’m especially interested in building models that work in real-time, particularly for safety-critical applications like autonomous driving.</p>
+      </div>
+    </section>
+
+    <section id="publications" class="mb-16">
+      <h2 class="text-xl font-semibold mb-4">Publications</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- First 4 Publications -->
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="images/halton.png" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">Halton Scheduler For Masked Generative Image Transformer</h3>
+          <p class="text-sm text-gray-600">ICLR 2025</p>
+          <p class="text-sm mt-2">A novel scheduling strategy for training MaskGIT efficiently with Halton sequences. Improves convergence and diversity.</p>
+          <a href="https://arxiv.org/abs/2404.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="images/drop.png" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">Don’t Drop Your Samples! Coherence-aware training for Conditional Diffusion</h3>
+          <p class="text-sm text-gray-600">CVPR 2024</p>
+          <p class="text-sm mt-2">We introduce coherence-aware loss functions for training conditional diffusion models, reducing sample collapse.</p>
+          <a href="https://arxiv.org/abs/2312.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="images/segad.png" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">Supervised Anomaly Detection for Complex Industrial Images</h3>
+          <p class="text-sm text-gray-600">CVPR 2024</p>
+          <p class="text-sm mt-2">A supervised anomaly detection method tailored to high-complexity industrial imagery settings.</p>
+          <a href="https://arxiv.org/abs/2403.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="images/triggering.png" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">Triggering Failures: OOD Detection in Semantic Segmentation</h3>
+          <p class="text-sm text-gray-600">ICCV 2021</p>
+          <p class="text-sm mt-2">Explores learning from local adversarial attacks for more robust out-of-distribution detection in segmentation models.</p>
+          <a href="https://arxiv.org/abs/2107.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+      </div>
+
+      <!-- Hidden publications -->
+      <div id="more-publications" class="hidden mt-8 grid gap-8 md:grid-cols-2">
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="paper5_thumb.jpg" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">Learning Uncertainty For Safety-Oriented Semantic Segmentation</h3>
+          <p class="text-sm text-gray-600">ICIP 2021</p>
+          <p class="text-sm mt-2">We present a framework for modeling predictive uncertainty in segmentation tasks related to autonomous driving.</p>
+          <a href="https://arxiv.org/abs/2106.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow">
+          <img src="images/thisdataset.jpg" alt="Paper Thumbnail" class="rounded mb-3 w-full h-48 object-cover">
+          <h3 class="font-semibold">This dataset does not exist: training models from generated images</h3>
+          <p class="text-sm text-gray-600">ICASSP 2020</p>
+          <p class="text-sm mt-2">Investigating the use of synthetic datasets for training deep models, with a focus on image quality and task generalization.</p>
+          <a href="https://arxiv.org/abs/2001.xxxx" class="text-blue-600 text-sm mt-2 inline-block" target="_blank">Read on arXiv →</a>
+        </div>
+
+        <!-- Add 7th, 8th, and 9th paper placeholders similarly -->
+      </div>
+      <div class="mt-4 text-center">
+        <button id="toggle-button" onclick="togglePublications()" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Show More</button>
+      </div>
+    </section>
+
+    <section id="news" class="mb-16">
+      <h2 class="text-xl font-semibold mb-4">News</h2>
+      <ul class="list-disc ml-5 text-gray-700">
+        <li>Apr 2025 – Our paper on MaskGIT training accepted to ICLR!</li>
+        <li>Feb 2024 – Presented at CVPR 2024 in Seattle.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="text-xl font-semibold mb-4">Contact</h2>
+      <div class="space-y-2">
+        <p>Feel free to reach out or connect with me:</p>
+        <div class="flex space-x-4 items-center">
+          <a href="https://github.com/vbesnier" class="text-blue-600 hover:underline" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/victorbesnier" class="text-blue-600 hover:underline" target="_blank">LinkedIn</a>
+          <a href="mailto:victor@example.com" class="text-blue-600 hover:underline">Email</a>
+          <a href="https://scholar.google.com/citations?hl=fr&user=n_C2h-QAAAAJ" class="text-blue-600 hover:underline" target="_blank">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    © 2025 Victor Besnier
+  </footer>
+</body>
+
+</html>
